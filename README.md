@@ -12,6 +12,8 @@ CI/CD:
     - checks for token
     - build image and push into the registry
     - format files
+    - check for license compliance
+    - check for application vulnerability
 
 database:
     - postgres
