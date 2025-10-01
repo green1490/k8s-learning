@@ -1,0 +1,25 @@
+webserver:
+    - rust
+    - communicate with a webserver
+    - contain test cases
+    - contain env variable for connection
+    - simple login and registering
+    - login gives back a login/session token
+
+CI/CD:
+    - doesnt allow to push into the master
+    - doesnt allow push in the master if the build or test cases fails
+    - checks for token
+    - build image and push into the registry
+    - format files
+
+database:
+    - postgres
+    - on startup tables are created
+
+monitoring:
+    - monitor the state of the cluster
+
+k8s:
+    - blue/green deploy
+    - kind for integration test
