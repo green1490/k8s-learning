@@ -267,6 +267,7 @@ name = "k8s-learning"
 version = "0.1.0"
 dependencies = [
  "axum",
+ "tokio",
 ]
 
 [[package]]

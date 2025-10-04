@@ -1,6 +1,5 @@
 webserver:
     - rust
-    - communicate with a webserver
     - contain test cases
     - contain env variable for connection
     - simple login and registering
