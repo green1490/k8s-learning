@@ -1,13 +1,13 @@
 mod root;
+mod model;
 mod registration;
 
 use axum::{
     routing::{get, post},
-    Router,
+    Router
 };
 use root::root;
 use registration::registration;
-
 
 #[tokio::main]
 async fn main() {
