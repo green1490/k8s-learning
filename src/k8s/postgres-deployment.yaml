@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: postgres-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: postgres-deployment
@@ -13,12 +13,22 @@ spec:
         app: postgres-deployment
     spec:
       containers:
-      - name: postgres-deployment
+      - name: postgres
         image: postgres:18.0-alpine3.22
+        env:
+          - name: POSTGRES_PASSWORD
+            value: "mypassword1234"
+          - name: POSTGRES_USER
+            value: "admin"
+          - name: POSTGRES_DB
+            value: "webserver"
         resources:
           limits:
-            memory: "128Mi"
+            memory: "500Mi"
+            cpu: "500m"
+          requests:
+            memory: "130Mi"
             cpu: "500m"
         ports:
-        - containerPort: 3301
+          - containerPort: 5432
 
