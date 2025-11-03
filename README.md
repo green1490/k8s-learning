@@ -24,3 +24,7 @@ monitoring:
 k8s:
     - blue/green deploy
     - kind for integration test
+
+Requisition:
+    - creating k8s cluster with kind
+    - deploying the yml files
