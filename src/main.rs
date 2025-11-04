@@ -1,16 +1,18 @@
 mod model;
 mod database;
 mod endpoints;
-
 use axum::{
     routing::{get, post},
     Router
 };
 
+use std::env;
 use endpoints::{root::root, registration::registration};
 
 #[tokio::main]
 async fn main() {
+    let postgres_url: &str = env::var("POSTGRES_URL").expect("Could not find the postgres url!").as_str();
+
     // build our application with a single route
     let app = Router::new()
         .route("/", get(root))
