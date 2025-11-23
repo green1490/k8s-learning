@@ -1,1 +1,0 @@
-FROM migrate/migrate:latest
