@@ -16,12 +16,21 @@ spec:
       - name: postgres
         image: postgres:18.0-alpine3.22
         env:
-          - name: POSTGRES_PASSWORD
-            value: "mypassword1234"
           - name: POSTGRES_USER
-            value: "admin"
+            valueFrom:
+              secretKeyRef:
+                name: postgres-env
+                key: username
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: postgres-env
+                key: password
           - name: POSTGRES_DB
-            value: "webserver"
+            valueFrom:
+              secretKeyRef:
+                name: postgres-env
+                key: database
         resources:
           limits:
             memory: "500Mi"
